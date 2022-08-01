@@ -1,0 +1,15 @@
+/Users/andrejasukevic/RiderProjects/B1TestTask1/B1TestTask1/bin/Debug/net6.0/B1TestTask1
+/Users/andrejasukevic/RiderProjects/B1TestTask1/B1TestTask1/bin/Debug/net6.0/B1TestTask1.deps.json
+/Users/andrejasukevic/RiderProjects/B1TestTask1/B1TestTask1/bin/Debug/net6.0/B1TestTask1.runtimeconfig.json
+/Users/andrejasukevic/RiderProjects/B1TestTask1/B1TestTask1/bin/Debug/net6.0/B1TestTask1.dll
+/Users/andrejasukevic/RiderProjects/B1TestTask1/B1TestTask1/bin/Debug/net6.0/B1TestTask1.pdb
+/Users/andrejasukevic/RiderProjects/B1TestTask1/B1TestTask1/obj/Debug/net6.0/B1TestTask1.csproj.AssemblyReference.cache
+/Users/andrejasukevic/RiderProjects/B1TestTask1/B1TestTask1/obj/Debug/net6.0/B1TestTask1.GeneratedMSBuildEditorConfig.editorconfig
+/Users/andrejasukevic/RiderProjects/B1TestTask1/B1TestTask1/obj/Debug/net6.0/B1TestTask1.AssemblyInfoInputs.cache
+/Users/andrejasukevic/RiderProjects/B1TestTask1/B1TestTask1/obj/Debug/net6.0/B1TestTask1.AssemblyInfo.cs
+/Users/andrejasukevic/RiderProjects/B1TestTask1/B1TestTask1/obj/Debug/net6.0/B1TestTask1.csproj.CoreCompileInputs.cache
+/Users/andrejasukevic/RiderProjects/B1TestTask1/B1TestTask1/obj/Debug/net6.0/B1TestTask1.dll
+/Users/andrejasukevic/RiderProjects/B1TestTask1/B1TestTask1/obj/Debug/net6.0/refint/B1TestTask1.dll
+/Users/andrejasukevic/RiderProjects/B1TestTask1/B1TestTask1/obj/Debug/net6.0/B1TestTask1.pdb
+/Users/andrejasukevic/RiderProjects/B1TestTask1/B1TestTask1/obj/Debug/net6.0/B1TestTask1.genruntimeconfig.cache
+/Users/andrejasukevic/RiderProjects/B1TestTask1/B1TestTask1/obj/Debug/net6.0/ref/B1TestTask1.dll
