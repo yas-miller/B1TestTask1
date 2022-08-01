@@ -27,7 +27,7 @@ public class CustomFileGenerator
         {
             for (int i = 0; i < this.stringsCount; i++)
             {
-                new CustomFile {}
+                
             }
             file.WriteLine();
         }
