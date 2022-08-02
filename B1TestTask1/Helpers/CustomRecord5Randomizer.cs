@@ -2,7 +2,7 @@ namespace B1TestTask1.Models;
 
 public class CustomRecord5Randomizer
 {
-    public static CustomRecord5 GetRandomCustomRecord()
+    private static CustomRecord5 GetRandomCustomRecord()
     {
         return new CustomRecord5
         {

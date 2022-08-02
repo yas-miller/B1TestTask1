@@ -10,14 +10,15 @@ try
         Console.WriteLine(@"Выберите действие:
 1. Сгенерировать файлы
 2. Объединить файлы в один
-3. Импортировать файлы в БД");
+3. Импортировать файлы в БД
+0. Завершить программу");
 
         if ((consoleKey = Console.ReadKey().KeyChar) != '0')
         {
             switch (consoleKey)
             {
                 case '1':
-                    Console.WriteLine("\nСколько файлов сгенерировать? (100 - Enter)");
+                    Console.WriteLine("\nСколько файлов сгенерировать? (100 - нажмите Enter)");
                     int customFilesCount;
                     if (int.TryParse(Console.ReadLine(), out customFilesCount))
                     {
@@ -30,16 +31,11 @@ try
                     break;
                 case '2':
                     var customFilesJoiner = new CustomFilesJoiner();
-                    Console.WriteLine($"\nУкажите путь до папки с файлами ({customFilesJoiner.FolderPath} - Enter)");
-                    int customFile;
-                    if (int.TryParse(Console.ReadLine(), out customFile))
-                    {
-                        var test = new CustomFilesGenerator().BatchGenerateAndSaveCustomFilesInParallel(customFile);
-                    }
-                    else
-                    {
-                        var test = new CustomFilesGenerator().BatchGenerateAndSaveCustomFilesInParallel();
-                    }
+                    Console.WriteLine($"\nУкажите путь до папки с файлами ({customFilesJoiner.FolderPath} - нажмите Enter)");
+                    string? folderPath = Console.ReadLine();
+                    Console.WriteLine("\nУдалить последовательность символов? Если да, укажите требуемые сочетания символов (Нет - нажмите Enter)");
+                    string? charSequenceToRemove = Console.ReadLine();
+                    customFilesJoiner.batchJoinCustomFilesInParallel(folderPath, charSequenceToRemove);
                     break;
                 case '3':
                     break;

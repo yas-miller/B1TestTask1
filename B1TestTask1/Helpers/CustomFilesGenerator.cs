@@ -11,17 +11,6 @@ public class CustomFilesGenerator: CustomFilesBaseHelper
 
     private static object locker = new object();
 
-    public CustomFilesGenerator()
-    {
-        
-    }
-    
-    public CustomFilesGenerator(ref List<CustomFile> customFiles)
-    {
-        this.CustomFiles = customFiles;
-    }
-
-    
     public void SaveCustomFile(CustomFile customFile)
     {
         lock (locker)
