@@ -1,4 +1,3 @@
-using System.Reflection;
 using B1TestTask1.Extensions;
 using B1TestTask1.Models;
 
@@ -11,34 +10,6 @@ public class CustomFilesGenerator: CustomFilesBaseHelper
 
     private static object locker = new object();
 
-    public void SaveCustomFile(CustomFile customFile)
-    {
-        lock (locker)
-        {
-            if (!Directory.Exists(this.FolderPath))
-            {
-                Directory.CreateDirectory(this.FolderPath);
-            }
-        }
-
-        using (var file = File.CreateText(Path.ChangeExtension(Path.Combine(this.FolderPath, Path.GetRandomFileName()),
-                   ".txt")))
-        {
-            foreach (var customRecord in customFile.CustomRecordArray)
-            {
-                file.WriteLine($"{customRecord.RandomDate}{Separator}{customRecord.RandomLatinString}{Separator}{customRecord.RandomRussianString}{Separator}{customRecord.RandomPositiveEvenInteger}{Separator}{customRecord.RandomPositiveDouble}{Separator}");
-            }
-        }
-    }
-
-
-    public CustomFile GenerateCustomFile()
-    {
-        var customFile = new CustomFile
-            { CustomRecordArray = CustomRecord5Randomizer.BatchGetRandomCustomRecordsInParallel(stringsCount) };
-        CustomFiles.Add(customFile);
-        return customFile;
-    }
 
     public List<CustomFile> BatchGenerateAndSaveCustomFilesInParallel(int? count = null)
     {
@@ -83,8 +54,38 @@ public class CustomFilesGenerator: CustomFilesBaseHelper
         List<CustomFile> outputCustomFilesList = new List<CustomFile>();
         for (int i = 0; i < count; i++)
         {
-            SaveCustomFile(GenerateCustomFile());
+            var generatedCustomFile = GenerateCustomFile();
+            outputCustomFilesList.Add(generatedCustomFile);
+            SaveCustomFile(generatedCustomFile);
         }
         return outputCustomFilesList;
+    }
+    
+    public CustomFile GenerateCustomFile()
+    {
+        var customFile = new CustomFile
+            { CustomRecordArray = CustomRecord5Randomizer.BatchGetRandomCustomRecordsInParallel(stringsCount) };
+        CustomFiles.Add(customFile);
+        return customFile;
+    }
+    
+    public void SaveCustomFile(CustomFile customFile)
+    {
+        lock (locker)
+        {
+            if (!Directory.Exists(this.FolderPath))
+            {
+                Directory.CreateDirectory(this.FolderPath);
+            }
+        }
+
+        using (var file = File.CreateText(Path.ChangeExtension(Path.Combine(this.FolderPath, Path.GetRandomFileName()),
+                   ".txt")))
+        {
+            foreach (var customRecord in customFile.CustomRecordArray)
+            {
+                file.WriteLine($"{customRecord.RandomDate}{Separator}{customRecord.RandomLatinString}{Separator}{customRecord.RandomRussianString}{Separator}{customRecord.RandomPositiveEvenInteger}{Separator}{customRecord.RandomPositiveDouble}{Separator}");
+            }
+        }
     }
 }

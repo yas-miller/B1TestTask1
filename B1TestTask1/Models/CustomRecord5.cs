@@ -4,6 +4,8 @@ namespace B1TestTask1.Models;
 
 public class CustomRecord5
 {
+    public int Id { get; set; }
+    
     [Column(TypeName="Date")]
     public DateOnly RandomDate { get; set; }
     public string RandomLatinString { get; set; }

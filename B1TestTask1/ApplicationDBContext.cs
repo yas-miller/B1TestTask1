@@ -5,7 +5,7 @@ namespace B1TestTask1;
 
 public class ApplicationDBContext: DbContext
 {
-    public DbSet<CustomFile> CustomFiles { get; set; }
+    public DbSet<CustomRecord5> CustomRecords { get; set; }
 
     public ApplicationDBContext()
     {
